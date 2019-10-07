@@ -13,14 +13,6 @@ Jumbo Front-end Developer Code Project
 - It should use JS as the primary language (preferably React although not required)
 - It may be responsive to desktop and mobile clients (liberty’s may be taken for alternate viewport sizes)
 
-### Features
-
-- Support browser:
-- Linting, code quality control: eslint
-- Unit testing and E2E tetsing: jest + enzyme
-- UI component library/framework: [Material UI](https://material-ui.com/)
-- UI dev environment: [Storybook](https://storybook.js.org/)
-
 ### Boilerplate
 
 This project is based on this boilerplate:

@@ -21,6 +21,12 @@ export const ActionTypes = keyMirror({
   GITHUB_GET_REPOS: undefined,
   GITHUB_GET_REPOS_SUCCESS: undefined,
   GITHUB_GET_REPOS_FAILURE: undefined,
+  MOVIES_WIDGET_GET_MOVIES: undefined,
+  MOVIES_WIDGET_GET_MOVIES_SUCCESS: undefined,
+  MOVIES_WIDGET_GET_MOVIES_FAILURE: undefined,
+  MOVIE_WIDGET_GET_MOVIE: undefined,
+  MOVIE_WIDGET_GET_MOVIE_SUCCESS: undefined,
+  MOVIE_WIDGET_GET_MOVIE_FAILURE: undefined,
   SHOW_ALERT: undefined,
   HIDE_ALERT: undefined,
 });

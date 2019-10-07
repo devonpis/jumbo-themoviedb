@@ -16,6 +16,10 @@ const AlertWrapper = styled(AlertComponent)`
   line-height: 1;
   padding: 0;
   position: relative;
+  align-items: center;
+  font-size: 14px;
+  line-height: 18px;
+  padding-right: 20px;
 `;
 
 const AlertIcon = styled.div`
@@ -33,6 +37,12 @@ const AlertButton = styled.button`
   position: absolute;
   right: ${utils.spacer(1)};
   top: ${utils.spacer(1)};
+  width: 20px;
+  height: 20px;
+  svg {
+    width: 10px;
+    height: 10px;
+  }
 `;
 
 const Alert = ({ children, handleClickClose, id, icon, ...rest }) => {

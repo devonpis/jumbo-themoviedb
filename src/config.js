@@ -4,8 +4,9 @@
  */
 
 const config = {
-  name: 'React Redux Saga Boilerplate',
-  description: 'Boilerplate with React and Redux with Redux Saga',
+  name: 'Jumbo The Movie DB',
+  description: 'Jumbo Front-end Developer Code Project',
+  api_key: 'Jumbo Front-end Developer Code Project',
 };
 
 export default config;

@@ -15,16 +15,12 @@ import config from 'config';
 import { showAlert } from 'actions';
 
 import Home from 'routes/Home';
-import Private from 'routes/Private';
+import Movie from 'routes/Movie';
 import NotFound from 'routes/NotFound';
 
-import Header from 'components/Header';
 import SystemAlerts from 'components/SystemAlerts';
 
-import Footer from 'components/Footer';
 import GlobalStyles from 'components/GlobalStyles';
-import RoutePublic from 'components/RoutePublic';
-import RoutePrivate from 'components/RoutePrivate';
 
 const AppWrapper = styled.div`
   display: flex;
@@ -32,19 +28,11 @@ const AppWrapper = styled.div`
   min-height: 100vh;
   opacity: 1 !important;
   position: relative;
-  transition: opacity 0.5s;
 `;
-
-const MainPrivate = ({ isAuthenticated }) =>
-  isAuthenticated &&
-  css`
-    padding: ${utils.px(headerHeight)} 0 0;
-  `;
 
 const Main = styled.main`
   min-height: 100vh;
 
-  ${MainPrivate};
 `;
 
 export class App extends React.Component {
@@ -69,33 +57,22 @@ export class App extends React.Component {
     return (
       <Router history={history}>
         <ThemeProvider theme={theme}>
-          <AppWrapper logged={user.isAuthenticated}>
+          <AppWrapper>
             <Helmet
               defer={false}
-              htmlAttributes={{ lang: 'pt-br' }}
+              htmlAttributes={{ lang: 'en-us' }}
               encodeSpecialCharacters={true}
               defaultTitle={config.name}
               titleTemplate={`%s | ${config.name}`}
-              titleAttributes={{ itemprop: 'name', lang: 'pt-br' }}
+              titleAttributes={{ itemprop: 'name', lang: 'en-us' }}
             />
-            {user.isAuthenticated && <Header dispatch={dispatch} user={user} />}
-            <Main isAuthenticated={user.isAuthenticated}>
+            <Main>
               <Switch>
-                <RoutePublic
-                  isAuthenticated={user.isAuthenticated}
-                  path="/"
-                  exact
-                  component={Home}
-                />
-                <RoutePrivate
-                  isAuthenticated={user.isAuthenticated}
-                  path="/private"
-                  component={Private}
-                />
+                <Route path="/" exact component={Home} />
+                <Route path="/movie/:movieId" exact component={Movie} />
                 <Route component={NotFound} />
               </Switch>
             </Main>
-            <Footer />
             <SystemAlerts />
             <GlobalStyles />
           </AppWrapper>

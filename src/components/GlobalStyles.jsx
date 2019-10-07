@@ -1,9 +1,10 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { appColor } from 'modules/theme';
+import theme, { appColor } from 'modules/theme';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
   *,
   *:before,
@@ -18,11 +19,30 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: Lato, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 16px; /* stylelint-disable unit-blacklist */
     margin: 0;
     min-height: 100vh;
     padding: 0;
+    background: ${theme.palette.bgColor};
+    color: ${theme.palette.fontColor};
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: Montserrat, sans-serif;
+    font-weight:bold;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 24px;
   }
 
   img {

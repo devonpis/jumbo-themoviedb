@@ -21,6 +21,7 @@ const Icon = ({ name, ...rest }) => (
 
 Icon.propTypes = {
   name: PropTypes.oneOf([
+    'arrow-left',
     'bell-o',
     'bell',
     'bolt',
@@ -29,6 +30,7 @@ Icon.propTypes = {
     'check',
     'dot-circle-o',
     'exclamation-circle',
+    'magnify',
     'question-circle-o',
     'question-circle',
     'sign-in',

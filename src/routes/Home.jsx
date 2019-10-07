@@ -3,59 +3,45 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import config from 'config';
-import { login } from 'actions/index';
+import logoImg from 'assets/media/brand/logo.png';
+import headerBg from 'assets/media/images/header-bg.png';
 
-import { Button, Container, Text, utils } from 'styled-minimal';
-import Background from 'components/Background';
-import Icon from 'components/Icon';
-import Logo from 'components/Logo';
+import MoviesWidget from 'components/Widgets/MoviesWidget/MoviesWidget';
 
-const { spacer } = utils;
-
-const HomeContainer = styled(Container)`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const HomeContainer = styled.div`
   min-height: 100vh;
 `;
 
 const Header = styled.div`
-  margin-bottom: ${spacer(3)};
-  text-align: center;
-
-  svg {
-    height: 10rem;
-    width: auto;
-
-    ${/* sc-custom '@media-query' */ utils.responsive({
-      lg: `
-        height: 15rem;
-     `,
-    })};
+  position: relative;
+  height: 192px;
+  box-sizing: border-box;
+  padding-top: 60px;
+  background: radial-gradient(
+    82.98% 213.08% at 50% 0%,
+    rgba(5, 112, 172, 0.3) 0%,
+    rgba(8, 27, 35, 0) 50%
+  );
+  img {
+    display: block;
+    margin: 0 auto;
+    height: 59px;
   }
-`;
-
-const Heading = styled.h1`
-  color: #fff;
-  font-size: 3.5rem;
-  line-height: 1.4;
-  margin-bottom: ${spacer(3)};
-  margin-top: 0;
-  text-align: center;
-
-  ${/* sc-custom '@media-query' */ utils.responsive({
-    lg: `
-      font-size: 4rem;
-    `,
-  })};
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(${headerBg});
+    background-position: center;
+  }
 `;
 
 export class Home extends React.PureComponent {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    user: PropTypes.object.isRequired,
   };
 
   handleClickLogin = () => {
@@ -65,27 +51,13 @@ export class Home extends React.PureComponent {
   };
 
   render() {
-    const { user } = this.props;
-
     return (
-      <Background key="Home" data-testid="HomeWrapper">
-        <HomeContainer verticalPadding>
-          <Header>
-            <Logo type="logo" />
-          </Header>
-          <Heading>{config.name}</Heading>
-          <Button
-            animate={user.status === 'running'}
-            onClick={this.handleClickLogin}
-            size="xl"
-            textTransform="uppercase"
-            data-testid="Login"
-          >
-            <Icon name="sign-in" />
-            <Text ml={2}>Start</Text>
-          </Button>
-        </HomeContainer>
-      </Background>
+      <HomeContainer>
+        <Header>
+          <img src={logoImg} alt="The Movie DB" />
+        </Header>
+        <MoviesWidget />
+      </HomeContainer>
     );
   }
 }
