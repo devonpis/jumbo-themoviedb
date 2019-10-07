@@ -1,8 +1,9 @@
 # jumbo-themoviedb
 
 Jumbo Front-end Developer Code Project
-[github](https://github.com/devonpis/jumbo-themoviedb)
-[Demo](https://jumbo-themoviedb.web.app/)
+
+- [github](https://github.com/devonpis/jumbo-themoviedb)
+- [Demo](https://jumbo-themoviedb.web.app/)
 
 ### Acceptence criteria
 
