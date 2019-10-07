@@ -50,7 +50,7 @@ This project is based on this boilerplate:
 
 `npm run lint` / `npm run lint:styles`
 
-### Unit Testing
+### Unit Testing (Testing is still WIP)
 
 - jest 23.x
 - enzyme 3.x
