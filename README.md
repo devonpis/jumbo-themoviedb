@@ -1,6 +1,8 @@
 # jumbo-themoviedb
 
 Jumbo Front-end Developer Code Project
+[github](https://github.com/devonpis/jumbo-themoviedb)
+[Demo](https://jumbo-themoviedb.web.app/)
 
 ### Acceptence criteria
 
@@ -12,6 +14,12 @@ Jumbo Front-end Developer Code Project
 - It should allow the user to search for a specific movie (not limited to popular movies)
 - It should use JS as the primary language (preferably React although not required)
 - It may be responsive to desktop and mobile clients (liberty’s may be taken for alternate viewport sizes)
+
+### Remarks
+
+- I've utilised the data store in this project, search results are cached in the store unless the user start a new search, refresh the browser or leaving the site.
+- Same apply to the movie details page, movie info is cached in the store unless the user start a new search, refresh the browser or leaving the site.
+- As I'm running out of time, unit testing is still WIP, and i havn't clean up unneccessary files in the boilerplate.
 
 ### Boilerplate
 
